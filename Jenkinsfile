@@ -1,7 +1,8 @@
 node('master') {	
 	stagesWithTry([
 		
-		load repos.txt
+		readFile('repos.txt')
+		
 	])
 }
 

@@ -1,8 +1,7 @@
 node('master') {	
 	stagesWithTry([
 		
-      env.WORKSPACE = pwd()
-     def version = readFile "${env.WORKSPACE}/repos.txt"
+      readFile('repos.txt')
      
 	])
 }

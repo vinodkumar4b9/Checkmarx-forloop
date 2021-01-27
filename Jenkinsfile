@@ -1,20 +1,13 @@
-node('master') {	
-	stagesWithTry([
-		
-		readFile('repos.txt')
-		
-	])
-}
-
-def stagesWithTry(list){
-	for (int i = 0; i < list.size(); i++) {
-		try {	
-			stage(list[i]){
-					sh "git clone  https://github.com/vinodkumar4b9/${list[i]}"
-					
-			} 
-		} catch (Exception e) {
-			echo "Stage failed, but we continue"  
-		}
-	}
+pipeline {
+   agent { label 'master' }
+     stages {
+       stage('read') {
+           steps {
+               script {
+                   def data = readFile(file: 'zorg.txt')
+                   println(data)
+               }
+           }
+       }
+   }
 }

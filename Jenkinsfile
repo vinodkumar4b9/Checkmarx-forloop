@@ -1,7 +1,8 @@
 node('master') {	
 	stagesWithTry([
 		
-      def list = readFile(file: 'repos.txt')
+      env.WORKSPACE = pwd()
+     def version = readFile "${env.WORKSPACE}/repos.txt"
      
 	])
 }

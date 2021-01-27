@@ -1,7 +1,7 @@
 node('master') {	
 	stagesWithTry([
 		
-       def list = readFile file:"file.txt"
+       def list = readFile file:"repos.txt"
      
 	])
 }

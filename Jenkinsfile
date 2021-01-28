@@ -1,18 +1,24 @@
-node('master') {	
-	stagesWithTry([
-		
-       	env.FILENAME = readFile 'repos.txt'
-     
-	])
+pipeline {
+    agent any
+
+    stages {
+        stage("Read test.txt file") {
+            steps {
+                script {
+                    final String content = readFile(file: "repos.txt")
+                    final List myKeys = extractLines(content)
+                    echo "myKeys = ${myKeys}"
+                }
+            }
+        }
+    }
 }
 
-def stagesWithTry(list){
-	for (int i = 0; i < list.size(); i++) {
-			
-			stage(list[i]){
-					sh "git clone https://github.com/vinodkumar4b9/${list[i]}.git"
-		
-		 
-	}
-  }
+@NonCPS
+List extractLines(final String content) {
+    List myKeys = []
+    content.eachLine { line -> 
+        myKeys << line
+    }
+    return myKeys
 }

@@ -7,7 +7,7 @@ pipeline {
                 script {
                     final String content = readFile(file: "repos.txt")
                     final List myKeys = extractLines(content)
-                    echo "myKeys = ${myKeys}"
+                    echo "${myKeys}"
                 }
             }
         }

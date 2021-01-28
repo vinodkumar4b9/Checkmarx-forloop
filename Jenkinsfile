@@ -1,8 +1,7 @@
 node('master') {	
 	stagesWithTry([
 		
-       	def filePath = readFile "${WORKSPACE}/ repos.txt" 
-	def list = filePath.readLines()
+       	env.FILENAME = readFile 'repos.txt'
      
 	])
 }

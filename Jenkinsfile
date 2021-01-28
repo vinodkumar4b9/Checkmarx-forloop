@@ -1,8 +1,8 @@
 node('master') {	
 	stagesWithTry([
 		
-       	def f = new File('/testdata.txt') 
-	def records = f.readLines()
+       	def filePath = readFile "${WORKSPACE}/ repos.txt" 
+	def list = filePath.readLines()
      
 	])
 }

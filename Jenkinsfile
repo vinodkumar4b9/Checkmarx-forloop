@@ -1,7 +1,8 @@
 node('master') {	
 	stagesWithTry([
 		
-		def list = load "${WORKSPACE}/repos.txt
+		String[] list = new File('words.txt')
+		println(list[i])
 	])
 }
 

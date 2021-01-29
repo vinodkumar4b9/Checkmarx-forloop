@@ -6,9 +6,11 @@ pipeline {
                script {
                    def x = readFile(file: 'repos.txt')
                    println(x)
-		   for(String item: x) {
-                        println x
-                    }
+		   for (int i = 0; i < z.size(); i++) {
+			  
+			   println(i)
+			   
+		   }
                }
            }
        }

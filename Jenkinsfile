@@ -1,23 +1,24 @@
-pipeline {
-    agent any
-
-    stages {
-        stage("Read test.txt file") {
-            steps {
-                script {
-                    def words = []
-                new File( 'repos.txt' ).eachLine { line ->
-                 words << line
-                }
-
-// print them out
-        words.each {
-             println it
-}
-                }
-            }
-        }
-    }
+node('master') {	
+	stagesWithTry([
+		'Amiautomation'
+		,'githubbotfdsfds'
+		,'cicd-pipeline-train-schedule-jenkins'
+		,'Seans-TypeScript-NodeJS-CRUD-REST-API-Boilerplate'
+		,'docker-sonarqube'
+	])
 }
 
-
+def stagesWithTry(list){
+	for (int i = 0; i < list.size(); i++) {
+		try {	
+			stage(list[i]){
+			    
+					
+					println(list[i])
+			
+			} 
+		} catch (Exception e) {
+			echo "Stage failed, but we continue"  
+		}
+	}
+}

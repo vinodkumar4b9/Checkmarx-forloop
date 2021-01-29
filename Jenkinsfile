@@ -7,7 +7,7 @@ pipeline {
                    def x = readFile(file: 'repos.txt')
                    println(x)
 		   for(String item: x) {
-                        println item
+                        println x
                     }
                }
            }

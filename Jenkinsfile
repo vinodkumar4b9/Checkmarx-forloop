@@ -1,10 +1,7 @@
 node('master') {	
 	stagesWithTry([
-		'Amiautomation'
-		,'githubbotfdsfds'
-		,'cicd-pipeline-train-schedule-jenkins'
-		,'Seans-TypeScript-NodeJS-CRUD-REST-API-Boilerplate'
-		,'docker-sonarqube'
+		
+		load "${WORKSPACE}/repos.txt
 	])
 }
 

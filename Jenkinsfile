@@ -6,7 +6,7 @@ pipeline {
                script {
                    def x = readFile(file: 'repos.txt')
                    println(x)
-		   for (int i = 0; i < z.size(); i++) {
+		   for (int i = 0; i < x.size(); i++) {
 			  
 			   println(i)
 			   

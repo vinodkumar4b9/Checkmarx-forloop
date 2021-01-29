@@ -1,7 +1,7 @@
 node('master') {	
 	stagesWithTry([
 		
-		load "${WORKSPACE}/repos.txt
+		def list = load "${WORKSPACE}/repos.txt
 	])
 }
 

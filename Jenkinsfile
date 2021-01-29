@@ -5,20 +5,19 @@ pipeline {
         stage("Read test.txt file") {
             steps {
                 script {
-                    final String content = readFile(file: "repos.txt")
-                    final List myKeys = extractLines(content)
-                    echo "${myKeys}"
+                    def words = []
+                new File( 'repos.txt' ).eachLine { line ->
+                 words << line
+                }
+
+// print them out
+        words.each {
+             println it
+}
                 }
             }
         }
     }
 }
 
-@NonCPS
-List extractLines(final String content) {
-    List myKeys = []
-    content.eachLine { line -> 
-        myKeys << line
-    }
-    return myKeys
-}
+

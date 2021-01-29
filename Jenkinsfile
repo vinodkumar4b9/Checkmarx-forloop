@@ -4,8 +4,10 @@ pipeline {
        stage('read') {
            steps {
                script {
-                   def x = [ readFile(file: 'repos.txt') ]
-		   println(x)
+                   def list = [ readFile(file: 'repos.txt') ]
+		   for (item in list) {
+   				println item
+			}
 		   
                }
            }

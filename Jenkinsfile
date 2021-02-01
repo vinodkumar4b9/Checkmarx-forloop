@@ -7,11 +7,8 @@ pipeline {
              script{
          
                  
-           
-     def filePath = readFile "${WORKSPACE}/repos.txt"                   
-
- 
-     def lines = filePath.readLines() 
+           def filePath = readFile "${WORKSPACE}/repos.txt"                   
+           def lines = filePath.eachLine() 
       
 
 

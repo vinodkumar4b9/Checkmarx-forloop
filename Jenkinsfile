@@ -7,9 +7,10 @@ pipeline {
              script{
          
                  
-            for repo in $(cat repos.txt); do
+                for repo in $(cat repos.txt)  {
                echo "$repo" 
             done
+                }
                                        }
                     
          }

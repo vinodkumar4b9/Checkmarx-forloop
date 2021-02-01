@@ -7,16 +7,9 @@ pipeline {
              script{
          
                  
-           def filePath = readFile "${WORKSPACE}/repos.txt"                   
-           def lines = filePath.eachLine() 
-      
-
-
-                    for (line in lines) {                                            
-                     
-                        println(lines)
-                        
-                        }  
+            for repo in $(cat repos.txt); do
+               echo "$repo" 
+            done
                                        }
                     
          }

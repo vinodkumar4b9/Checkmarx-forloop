@@ -4,9 +4,9 @@ pipeline {
        stage('read') {
            steps {
                script {
-                   def list = [ readFile(file: 'repos.txt') ]
+                   def list =  readFile(file: 'repos.txt') 
 		  for (int i = 0; i < list.size(); i++) {
-				sh "echo Test Var ${list[i]}"
+				sh "echo Test Var $list"
 			}
 		   
                }

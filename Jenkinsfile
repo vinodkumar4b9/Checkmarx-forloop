@@ -1,8 +1,6 @@
-def map = [
-        
-   readFile(file: 'repos.txt')
+def map = readFile(file: 'repos.txt')
     
-]
+
 
 node {
     map.each { entry ->

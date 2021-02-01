@@ -6,7 +6,7 @@ pipeline {
                script {
                    def list = [ readFile(file: 'repos.txt') ]
 		  for (int i = 0; i < list.size(); i++) {
-				bat "echo Test Var ${list[i]}"
+				sh "echo Test Var ${list[i]}"
 			}
 		   
                }

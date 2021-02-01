@@ -7,7 +7,7 @@ pipeline {
                    def list = [ readFile(file: 'repos.txt') ]
 		   for (item in list) {
    				println item
-			        sh "echo required Item is $item
+			        sh "echo required Item is $item"
 			}
 		   
                }

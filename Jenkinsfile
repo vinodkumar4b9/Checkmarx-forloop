@@ -7,8 +7,9 @@ pipeline {
 
                 script {
                     def browsers =   readFile(file: 'repos.txt') 
-                    for (int i = 0; i < browsers.size(); ++i) {
-                        echo "${browsers}"
+                    def lines = browsers.readLines()
+                    for (int i = 0; i < lines.size(); ++i) {
+                        echo "${lines}"
                     }
                 }
             }

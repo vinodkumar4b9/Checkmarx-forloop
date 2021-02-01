@@ -4,7 +4,7 @@ pipeline {
        stage('read') {
            steps {
                script {
-                   def list =  readFile(file: 'repos.txt') 
+                   def map =  readFile(file: 'repos.txt') 
                    map.each { entry ->
                         stage (entry.key) {
                     echo "$entry.value"

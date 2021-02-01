@@ -1,14 +1,14 @@
-pipeline {
-   agent any
+def map = [
+        
+   readFile(file: 'repos.txt')
+    
+]
 
-   stages {
-      stage('Hello') {
-         steps {
-             script {
-                   def data = readFile(file: 'repos.txt')
-                   println(data)
-               }
-         }
-         }
-      }
-   }
+node {
+    map.each { entry ->
+        stage (entry.key) {
+                    echo "$entry.value"
+
+        }
+    }
+}

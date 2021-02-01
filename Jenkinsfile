@@ -7,7 +7,8 @@ pipeline {
                    def list = [ readFile(file: 'repos.txt') ]
 		   list.each {
                     println "${it}"
-		   
+			   
+		   }
                }
            }
        }

@@ -1,7 +1,5 @@
-def list = [
-        
-        readFile(file: 'repos.txt')
-]
+def list =  readFile(file: 'repos.txt')
+
 
 pipeline {
     agent any

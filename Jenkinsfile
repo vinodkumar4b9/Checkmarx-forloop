@@ -1,18 +1,17 @@
 pipeline {
-   agent { label 'master' }
-   stages {
-       stage('read') {
-           steps {
-               script {
-                   def list =  readFile(file: 'repos.txt') 
-		  for (int i = 0; i < list.size(); i++) {
-				sh "echo Test Var $list"
-			}
-		   
-               }
-           }
-       }
-   }
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+
+                script {
+                    def browsers = ['chrome', 'firefox']
+                    for (int i = 0; i < browsers.size(); ++i) {
+                        echo "Testing the ${browsers[i]} browser"
+                    }
+                }
+            }
+        }
+    }
 }
-
-

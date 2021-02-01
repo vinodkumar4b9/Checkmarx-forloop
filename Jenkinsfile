@@ -5,9 +5,8 @@ pipeline {
            steps {
                script {
                    def list = [ readFile(file: 'repos.txt') ]
-		   for (item in list) {
-   				println item
-			}
+		   list.each {
+                    println "${it}"
 		   
                }
            }

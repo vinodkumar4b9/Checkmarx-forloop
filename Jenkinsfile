@@ -4,15 +4,10 @@ pipeline {
    stages {
       stage('Hello') {
          steps {
-             script{
-         
-                 
-                for repo in $(cat repos.txt)  {
-               echo "$repo" 
-            done
-                }
-                                       }
-                    
+             script {
+                   def data = readFile(file: 'zorg.txt')
+                   println(data)
+               }
          }
          }
       }

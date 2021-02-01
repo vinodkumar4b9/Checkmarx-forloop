@@ -8,7 +8,7 @@ pipeline {
                 script {
                     def browsers =   readFile(file: 'repos.txt') 
                     for (int i = 0; i < browsers.size(); ++i) {
-                        echo "${browsers[i]}"
+                        echo "${browsers}"
                     }
                 }
             }

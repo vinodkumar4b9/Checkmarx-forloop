@@ -1,7 +1,6 @@
 def list = [
-        'PCNAME1',
-        'PCNAME2',
-        'PCNAME3'
+        
+        readFile(file: 'repos.txt')
 ]
 
 pipeline {

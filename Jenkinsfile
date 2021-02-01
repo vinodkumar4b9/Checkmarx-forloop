@@ -1,16 +1,23 @@
+def list = [
+        'PCNAME1',
+        'PCNAME2',
+        'PCNAME3'
+]
+
 pipeline {
-   agent { label 'master' }
-   stages {
-       stage('read') {
-           steps {
-               script {
-                   def list = [ readFile(file: 'repos.txt') ]
-		   list.each {
-                    println "${it}"
-			   
-		   }
-               }
-           }
-       }
-   }
+    agent any
+
+    stages {
+        stage('Loop through PCs') {
+            steps {
+                loopPC(list)
+            }
+        }
+    }
+}
+
+def loopPC(list){
+    list.each {
+        println "Computer ${it}"
+    }
 }

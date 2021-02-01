@@ -1,19 +1,31 @@
-
 pipeline {
-    agent any
+   agent any
 
-    stages {
-        stage('Loop through PCs') {
-            def list =  readFile(file: 'repos.txt')
-            steps {
-                loopPC(list)
-            }
-        }
-    }
-}
+   stages {
+      stage('Hello') {
+         steps {
+             script{
+         
+                 
 
-def loopPC(list){
-    list.each {
-        println "Computer ${it}"
-    }
-}
+##To read file from workspace which will contain the Jenkins Job Name ###
+           
+     def filePath = readFile "${WORKSPACE}/repos.txt"                   
+
+##To read file line by line ###
+ 
+     def lines = filePath.readLines() 
+      
+##To iterate and run Jenkins Jobs one by one ####
+
+                    for (line in lines) {                                            
+                     
+                        println(lines)
+                        
+                        }  
+                                       }
+                    
+         }
+         }
+      }
+   }

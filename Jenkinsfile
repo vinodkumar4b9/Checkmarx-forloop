@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Example') {
             
-            def allModules =   readFile(file: 'repos.txt') 
+            
             steps {
                 script {
+                def allModules =   readFile(file: 'repos.txt') 
                 allModules.each() {
                  echo it
       }

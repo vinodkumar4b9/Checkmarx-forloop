@@ -14,7 +14,7 @@ pipeline {
             }
         }
     }
-}
+
 
 @NonCPS
 def loop_of_sh(list) {

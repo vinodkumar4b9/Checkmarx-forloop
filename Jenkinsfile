@@ -2,23 +2,17 @@ pipeline {
     agent any
     stages {
         stage('Example') {
+            
+            def allModules =   readFile(file: 'repos.txt') 
             steps {
-
                 script {
-                    def browsers =   readFile(file: 'repos.txt') 
-                    loop_of_sh(abcs)
-                    
-                    
-                    }
-                }
+                allModules.each() {
+                 echo it
+      }
+   }
+}
             }
         }
     }
 
 
-@NonCPS
-def loop_of_sh(list) {
-    list.each { item ->
-        sh "echo Hello ${item}"
-    }
-}

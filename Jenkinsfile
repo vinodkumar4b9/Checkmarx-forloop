@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                 def allModules =   readFile(file: 'repos.txt') 
-                allModules.each() {
+                allModules.eachline() {
                  echo it
       }
    }

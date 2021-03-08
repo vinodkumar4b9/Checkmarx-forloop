@@ -5,17 +5,11 @@ pipeline {
       stage('Hello') {
          steps {
              script{
-            
-
-
-           
-     def filePath = readFile "${WORKSPACE}/dest_hosts.txt"                   
+      def filePath = readFile "${WORKSPACE}/dest_hosts.txt"                   
       def lines = filePath.readLines() 
-      
-
-
-                    lines.each { String line ->
-                    println line
+      lines.each { String line ->
+                    
+               sh "echo $lines"
                      }
                                        }
                     

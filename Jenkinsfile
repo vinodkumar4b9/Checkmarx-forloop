@@ -14,6 +14,7 @@ pipeline {
       }
       tags.each { String tag ->
                sh "echo $tag"
+               sh "echo $line"
                
          }
                      

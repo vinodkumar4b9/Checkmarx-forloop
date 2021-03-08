@@ -10,10 +10,7 @@ pipeline {
 
            
      def filePath = readFile "${WORKSPACE}/dest_hosts.txt"                   
-
-
- 
-     def lines = filePath.readLines() 
+      def lines = filePath.readLine() 
       
 
 

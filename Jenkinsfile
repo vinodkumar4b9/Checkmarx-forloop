@@ -1,20 +1,28 @@
-node('master') {
-    
-   wrap([$class: 'ConfigFileBuildWrapper', managedFiles: [[fileId: 'dest_hosts.txt', targetLocation: '', variable: 'DEST_HOST']]]) {
-        HOST = Arrays.asList(readFile(env.DEST_HOST).split("\\r?\\n"))
-        deploy(HOST)
-    
-   }
-}
+pipeline {
+   agent any
 
-@NonCPS
-def deploy(host){
-    for (String target : host){
-        try {
-            echo target
-        }
-        finally {
-           echo target
-        }
-    }
-}
+   stages {
+      stage('Hello') {
+         steps {
+             script{
+            
+
+##To read file from workspace which will contain the Jenkins Job Name ###
+           
+     def filePath = readFile "${WORKSPACE}/dest_hosts.txt"                   
+
+##To read file line by line ###
+ 
+     def lines = filePath.readLines() 
+      
+##To iterate and run Jenkins Jobs one by one ####
+
+                    for (line in lines) 
+                 
+                        sh "echo lines"
+                                       }
+                    
+         }
+         }
+      }
+   }

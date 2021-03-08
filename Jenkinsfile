@@ -9,7 +9,7 @@ pipeline {
       def lines = filePath.readLines() 
       lines.each { String line ->
                     
-               sh "echo $lines"
+               sh "echo $line"
                      }
                                        }
                     

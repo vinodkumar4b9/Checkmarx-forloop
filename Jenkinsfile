@@ -10,13 +10,13 @@ pipeline {
 
            
      def filePath = readFile "${WORKSPACE}/dest_hosts.txt"                   
-      def lines = filePath.readLine() 
+      def lines = filePath.readLines() 
       
 
 
-                    for (line in lines) 
-                 
-                        sh "echo $lines"
+                    lines.each { String line ->
+                    println line
+                     }
                                        }
                     
          }

@@ -7,12 +7,10 @@ pipeline {
              script{
       def filePath = readFile "${WORKSPACE}/dest_hosts.txt"                   
       def lines = filePath.readLines() 
-      def tagspath = readFile "${WORKSPACE}/dest_hosts.txt"                   
-      def tags = tagspath.readLines()
       lines.each { String line ->
-        //sh "echo $line"
+       sh "echo $line"
         
-               sh "echo $tag"
+            
               
                
         

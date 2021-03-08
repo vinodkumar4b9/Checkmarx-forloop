@@ -11,12 +11,12 @@ pipeline {
       def tags = tagspath.readLines()
       lines.each { String line ->
         `sh "echo $line"
-       
+      }
       tags.each { String tag ->
                sh "echo $tag"
                
          }
-                     }
+                     
                                        }
                     
          }

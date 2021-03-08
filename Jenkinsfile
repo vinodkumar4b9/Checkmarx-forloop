@@ -19,7 +19,7 @@ pipeline {
 
                     for (line in lines) 
                  
-                        sh "echo lines"
+                        sh "echo $lines"
                                        }
                     
          }
